@@ -14,6 +14,9 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		69548AA5501F56F0FD53152F /* Pods_HDRosaryTimeline_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD60A2873D4B690A7C34473 /* Pods_HDRosaryTimeline_Example.framework */; };
+		7040DCF11FF0D4D90039E44E /* CardTypeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040DCF01FF0D4D90039E44E /* CardTypeTimelineViewController.swift */; };
+		7040DCF31FF0D4FA0039E44E /* ColoredTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040DCF21FF0D4FA0039E44E /* ColoredTimelineViewController.swift */; };
+		7040DCF51FF0D54A0039E44E /* LoadingTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040DCF41FF0D54A0039E44E /* LoadingTimelineViewController.swift */; };
 		BDBBC9A61223D173C1AEAE5A /* Pods_HDRosaryTimeline_Example_HDRosaryTimeline_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED2D49EB8A77E954F40A8AF /* Pods_HDRosaryTimeline_Example_HDRosaryTimeline_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		607FACE51AFB9204008FA782 /* HDRosaryTimeline_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HDRosaryTimeline_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		7040DCF01FF0D4D90039E44E /* CardTypeTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypeTimelineViewController.swift; sourceTree = "<group>"; };
+		7040DCF21FF0D4FA0039E44E /* ColoredTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredTimelineViewController.swift; sourceTree = "<group>"; };
+		7040DCF41FF0D54A0039E44E /* LoadingTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTimelineViewController.swift; sourceTree = "<group>"; };
 		7A0BF025C6307A588DD44266 /* Pods-HDRosaryTimeline_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDRosaryTimeline_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDRosaryTimeline_Example/Pods-HDRosaryTimeline_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7ED2D49EB8A77E954F40A8AF /* Pods_HDRosaryTimeline_Example_HDRosaryTimeline_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDRosaryTimeline_Example_HDRosaryTimeline_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE714E239E3285B107FE962 /* Pods-HDRosaryTimeline_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDRosaryTimeline_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDRosaryTimeline_Example/Pods-HDRosaryTimeline_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +116,9 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				7040DCF01FF0D4D90039E44E /* CardTypeTimelineViewController.swift */,
+				7040DCF21FF0D4FA0039E44E /* ColoredTimelineViewController.swift */,
+				7040DCF41FF0D54A0039E44E /* LoadingTimelineViewController.swift */,
 			);
 			name = "Example for HDRosaryTimeline";
 			path = HDRosaryTimeline;
@@ -381,6 +390,9 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				7040DCF31FF0D4FA0039E44E /* ColoredTimelineViewController.swift in Sources */,
+				7040DCF11FF0D4D90039E44E /* CardTypeTimelineViewController.swift in Sources */,
+				7040DCF51FF0D54A0039E44E /* LoadingTimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
