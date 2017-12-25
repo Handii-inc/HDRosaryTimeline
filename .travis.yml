@@ -1,0 +1,12 @@
+osx_image: xcode9.2
+language: objective-c
+script:
+- pod install --project-directory=Example
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/HDRosaryTimeline.xcworkspace
+  -scheme HDRosaryTimeline-Example -sdk iphonesimulator11.2 -destination 'platform=iOS
+  Simulator,name=iPhone 6,OS=11.2' ONLY_ACTIVE_ARCH=NO | xcpretty
+- pod lib lint
+notifications:
+  email: false
+  slack:
+    secure: RcgPR1yDyx6hZnP41FsPkg8040domwSjnaiUuQuKjMWQ5GuBapv9apZ3ybb7kmj4/HdsIoLOXfE5j7mPhIgjy628DfjCR7Xwb50DzKYnUy4NDeuGOyNSh3yPRiREmZr87w4MAUUcbUqDWfrsBSi4t5jAPFpsG3rUa2TKEKcLbjVHPyOkT/HrEuK6+ayC1jVMeDNhFAnYRj2TqgDaeLUcEm726VCMUpYGJVeNMur//oD2ssXnb3BuSRfMwEP3FLqyC+YGU+3tSIhL6Ha7TLy8Jus5cpQtRHG0n+dHX6chW3FZdLAJvmyJl5Uck7+vxBEJ5XcwrBA2uxhzaE2FrHhp/45QFT5PqaQFmgjSpjE4eLqN+62br+9+HdZ9VNmWZY1fpl5j7ErFwWwa4CQbQuNR+m3rc9RkiyZrdyFaynpyWJkh6wDXaCxUwb3i6WCbxC5D7tDXmLlod4avNtLe6cXjcSOq1A5J4803BrQVRJMQP9CZB3tgPo2mLELRMkmy+h+rb5RL7wSL1CdrDlmNqmFZ5ScZFefcL/wPLIUnPtSk4H1YcHVEJRnALVC1V9hRTKm8V6xkWcY2oxb+8EeOa4/KX1Kepyotor+peFfy1dWlL3yhNo/JgtWC4bCDAeVm2ZIDnveN3Nr1zC98k3Uor9JmUDekjqERwvVqtsgHuKVUGd0=
