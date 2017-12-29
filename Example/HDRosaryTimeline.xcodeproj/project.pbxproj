@@ -17,6 +17,7 @@
 		7040DCF11FF0D4D90039E44E /* CardTypeTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040DCF01FF0D4D90039E44E /* CardTypeTimelineViewController.swift */; };
 		7040DCF31FF0D4FA0039E44E /* ColoredTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040DCF21FF0D4FA0039E44E /* ColoredTimelineViewController.swift */; };
 		7040DCF51FF0D54A0039E44E /* LoadingTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040DCF41FF0D54A0039E44E /* LoadingTimelineViewController.swift */; };
+		7040DD2D1FF231310039E44E /* MealData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7040DD2C1FF231310039E44E /* MealData.swift */; };
 		BDBBC9A61223D173C1AEAE5A /* Pods_HDRosaryTimeline_Example_HDRosaryTimeline_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED2D49EB8A77E954F40A8AF /* Pods_HDRosaryTimeline_Example_HDRosaryTimeline_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		7040DCF01FF0D4D90039E44E /* CardTypeTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypeTimelineViewController.swift; sourceTree = "<group>"; };
 		7040DCF21FF0D4FA0039E44E /* ColoredTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredTimelineViewController.swift; sourceTree = "<group>"; };
 		7040DCF41FF0D54A0039E44E /* LoadingTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTimelineViewController.swift; sourceTree = "<group>"; };
+		7040DD2C1FF231310039E44E /* MealData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealData.swift; sourceTree = "<group>"; };
 		7A0BF025C6307A588DD44266 /* Pods-HDRosaryTimeline_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDRosaryTimeline_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HDRosaryTimeline_Example/Pods-HDRosaryTimeline_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7ED2D49EB8A77E954F40A8AF /* Pods_HDRosaryTimeline_Example_HDRosaryTimeline_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HDRosaryTimeline_Example_HDRosaryTimeline_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE714E239E3285B107FE962 /* Pods-HDRosaryTimeline_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HDRosaryTimeline_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HDRosaryTimeline_Example/Pods-HDRosaryTimeline_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				7040DCF01FF0D4D90039E44E /* CardTypeTimelineViewController.swift */,
 				7040DCF21FF0D4FA0039E44E /* ColoredTimelineViewController.swift */,
 				7040DCF41FF0D54A0039E44E /* LoadingTimelineViewController.swift */,
+				7040DD2C1FF231310039E44E /* MealData.swift */,
 			);
 			name = "Example for HDRosaryTimeline";
 			path = HDRosaryTimeline;
@@ -228,6 +231,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = NAG4KT22HS;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -390,6 +394,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				7040DD2D1FF231310039E44E /* MealData.swift in Sources */,
 				7040DCF31FF0D4FA0039E44E /* ColoredTimelineViewController.swift in Sources */,
 				7040DCF11FF0D4D90039E44E /* CardTypeTimelineViewController.swift in Sources */,
 				7040DCF51FF0D54A0039E44E /* LoadingTimelineViewController.swift in Sources */,
@@ -479,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -525,7 +530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -538,7 +543,9 @@
 			baseConfigurationReference = 7A0BF025C6307A588DD44266 /* Pods-HDRosaryTimeline_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NAG4KT22HS;
 				INFOPLIST_FILE = HDRosaryTimeline/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -553,7 +560,9 @@
 			baseConfigurationReference = 7EE714E239E3285B107FE962 /* Pods-HDRosaryTimeline_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NAG4KT22HS;
 				INFOPLIST_FILE = HDRosaryTimeline/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
