@@ -18,14 +18,6 @@ class BasicSectionView: UIView, SectionView {
     }
 
     //MARK:- SubComponents
-    private lazy var blur: UIVisualEffectView = {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        view.layer.addSublayer(self.upperShadow)
-        view.layer.addSublayer(self.dot)
-        view.layer.addSublayer(self.lowerShadow)
-        return view
-    }()
-
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -62,7 +54,12 @@ class BasicSectionView: UIView, SectionView {
 
         super.init(frame: .zero)
 
-        self.addSubview(self.blur)
+        self.colorPalette.colorting(section: self)
+        
+        self.layer.addSublayer(self.upperShadow)
+        self.layer.addSublayer(self.dot)
+        self.layer.addSublayer(self.lowerShadow)
+
         self.addSubview(self.textLabel)
     }
     
@@ -73,6 +70,7 @@ class BasicSectionView: UIView, SectionView {
     //MARK:- UIView
     override func layoutSubviews() {
         super.layoutSubviews()
+        self.colorPalette.colorting(section: self)
         self.colorPalette.coloring(titleLabel: self.textLabel, with: UIFont.systemFont(ofSize: self.sizeManager.titleFontSize))
         
         self.position.section(self)
@@ -92,10 +90,6 @@ class BasicSectionView: UIView, SectionView {
                                         y: self.dot.frame.maxY,
                                         width: self.sizeManager.thickness,
                                         height: (self.frame.height - self.dot.frame.maxY))
-        self.blur.frame = CGRect(x: 0,
-                                 y: 0,
-                                 width: self.frame.width,
-                                 height: self.frame.height)
         self.textLabel.frame = CGRect(x: self.upperShadow.frame.maxX + 20,
                                       y: 0,
                                       width: self.frame.width,

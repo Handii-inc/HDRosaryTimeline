@@ -6,7 +6,8 @@ class CardTypeTimelineViewController : HDRosaryTimelineViewController {
     
     init()
     {
-        super.init(nibName: nil, bundle: nil)
+        super.init(borderColor: .black,
+                   backGroundColor: .white)
         self.title = "Basic style."
     }
     

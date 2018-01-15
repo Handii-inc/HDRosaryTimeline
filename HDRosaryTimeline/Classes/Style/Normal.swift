@@ -1,38 +1,53 @@
 import Foundation
 
 class Normal: HDRosaryTimelineViewStyle {
+    private let borderColor: UIColor
+    private let backGroundColor: UIColor
+    private let dotColor: UIColor
+    private let titleTextColor: UIColor
+    private let textColor: UIColor
+    private let detailTextColor: UIColor
+    private let cardMargin: CGFloat
+    private let cardHeight: CGFloat
+    
     init(borderColor: UIColor,
          backGroundColor: UIColor,
+         dotColor: UIColor,
          cardMargin: CGFloat,
          cardHeight: CGFloat)
     {
-        self.backingField = BackingField(borderColor: borderColor,
-                                         backGroundColor: backGroundColor,
-                                         titleTextColor: borderColor,
-                                         textColor: backGroundColor.invert(),
-                                         detailTextColor: backGroundColor.invert().adjust(brightness: 0.4),
-                                         cardMargin: cardMargin,
-                                         cardHeight: cardHeight)
+        self.borderColor = borderColor
+        self.backGroundColor = backGroundColor
+        self.dotColor = dotColor
+        self.titleTextColor = borderColor
+        self.textColor = backGroundColor.invert()
+        self.detailTextColor = backGroundColor.invert().adjust(brightness: 0.5)
+        self.cardMargin = cardMargin
+        self.cardHeight = cardHeight
     }
     
     //MARK:- CellViewColorPalette
-    public func coloring(titleLabel: UILabel, with font: UIFont)
+    func coloring(cell: UIView) {
+        cell.backgroundColor = self.backGroundColor
+    }
+    
+    func coloring(titleLabel: UILabel, with font: UIFont)
     {
-        titleLabel.textColor = self.backingField.titleTextColor
+        titleLabel.textColor = self.titleTextColor
         titleLabel.font = font
         return
     }
     
-    public func coloring(dot layer: CALayer)
+    func coloring(dot layer: CALayer)
     {
-        layer.backgroundColor = self.backingField.backGroundColor.cgColor
-        layer.borderColor = self.backingField.borderColor.cgColor
+        layer.backgroundColor = self.dotColor.cgColor
+        layer.borderColor = self.borderColor.cgColor
         return
     }
     
-    public func coloring(shadow layer: CALayer)
+    func coloring(shadow layer: CALayer)
     {
-        layer.backgroundColor = self.backingField.borderColor.cgColor
+        layer.backgroundColor = self.borderColor.cgColor
         return
     }
 
@@ -62,26 +77,30 @@ class Normal: HDRosaryTimelineViewStyle {
     }
     
     //MARK:- SectionViewColorPalette
+    func colorting(section: UIView) {
+        section.backgroundColor = self.backGroundColor
+    }
+    
     func coloring(textLabel: UILabel, with font: UIFont) {
-        textLabel.textColor = self.backingField.textColor
+        textLabel.textColor = self.textColor
         textLabel.font = font
         return
     }
     
     func coloring(detailTextLabel: UILabel, with font: UIFont) {
-        detailTextLabel.textColor = self.backingField.detailTextColor
+        detailTextLabel.textColor = self.detailTextColor
         detailTextLabel.font = font
         return
     }
     
     func coloring(line layer: CALayer) {
-        layer.backgroundColor = self.backingField.borderColor.cgColor
+        layer.backgroundColor = self.borderColor.cgColor
         return
     }
     
     func coloring(card layer: CALayer) {
-        layer.backgroundColor = self.backingField.backGroundColor.cgColor
-        layer.borderColor = self.backingField.borderColor.cgColor
+        layer.backgroundColor = self.backGroundColor.cgColor
+        layer.borderColor = self.borderColor.cgColor
         return
     }
 
@@ -129,23 +148,23 @@ class Normal: HDRosaryTimelineViewStyle {
     }
     
     func height(of _: Single) -> CGFloat {
-        return self.backingField.cardMargin
-            + self.backingField.cardHeight
-            + self.backingField.cardMargin
+        return self.cardMargin
+            + self.cardHeight
+            + self.cardMargin
     }
     
     func height(of _: Top) -> CGFloat {
-        return self.backingField.cardMargin
-            + self.backingField.cardHeight
+        return self.cardMargin
+            + self.cardHeight
     }
     
     func height(of _: Middle) -> CGFloat {
-        return self.backingField.cardHeight
+        return self.cardHeight
     }
     
     func height(of _: Bottom) -> CGFloat {
-        return self.backingField.cardHeight
-            + self.backingField.cardMargin
+        return self.cardHeight
+            + self.cardMargin
     }
     
     func height(of _: SingleOfLastSection) -> CGFloat {
@@ -162,35 +181,5 @@ class Normal: HDRosaryTimelineViewStyle {
     
     func height(of _: BottomOfLastSection) -> CGFloat {
         return self.height(of: Bottom())
-    }
-    
-    //Backingfield
-    private let backingField : BackingField
-    
-    class BackingField {
-        let borderColor: UIColor
-        let backGroundColor: UIColor
-        let titleTextColor: UIColor
-        let textColor: UIColor
-        let detailTextColor: UIColor
-        let cardMargin: CGFloat
-        let cardHeight: CGFloat
-        
-        init(borderColor: UIColor,
-             backGroundColor: UIColor,
-             titleTextColor: UIColor,
-             textColor: UIColor,
-             detailTextColor: UIColor,
-             cardMargin: CGFloat,
-             cardHeight: CGFloat)
-        {
-            self.borderColor = borderColor
-            self.backGroundColor = backGroundColor
-            self.titleTextColor = titleTextColor
-            self.textColor = textColor
-            self.detailTextColor = detailTextColor
-            self.cardMargin = cardMargin
-            self.cardHeight = cardHeight
-        }
-    }
+    }    
 }

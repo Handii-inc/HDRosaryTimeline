@@ -2,26 +2,14 @@ import UIKit
 
 class BasicCellView<P: CellPosition>: BasicCellViewAdaptor, CellView {
     //MARK:- Sublayers
-    private lazy var line: CALayer = {
-        let layer = CALayer()
-        return layer
-    }()
-    
     private lazy var card: CALayer = {
         let layer = CALayer()
         layer.cornerRadius = 15
         return layer
     }()
-
-    private lazy var hideUpperOfCard: CALayer = {
-        let layer = CALayer()
-        return layer
-    }()
-
-    private lazy var hideLowerOfCard: CALayer = {
-        let layer = CALayer()
-        return layer
-    }()
+    private lazy var line = CALayer()
+    private lazy var hideUpperOfCard = CALayer()
+    private lazy var hideLowerOfCard = CALayer()
     
     //MARK:- Initializer
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -45,6 +33,7 @@ class BasicCellView<P: CellPosition>: BasicCellViewAdaptor, CellView {
         
         guard let sizeManagerNotNil = self.sizeManager else { return }
         
+        self.colorPalette?.coloring(cell: self)
         self.colorPalette?.coloring(line: self.line)
         self.line.frame = CGRect(x: sizeManagerNotNil.gapFromLeft - sizeManagerNotNil.thickness * 0.5,
                                  y: 0,

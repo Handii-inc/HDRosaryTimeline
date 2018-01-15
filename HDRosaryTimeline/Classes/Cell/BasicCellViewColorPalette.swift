@@ -1,16 +1,19 @@
 import Foundation
 
 class BasicCellViewColorPalette: CellViewColorPalette {
+    private let backGroundColor: UIColor
     private let borderColor: UIColor
     private let cardColor: UIColor
     private let textColor: UIColor
     private let detailTextColor: UIColor
     
-    init(borderColor: UIColor,
+    init(backGroundColor: UIColor,
+         borderColor: UIColor,
          cardColor: UIColor,
          textColor: UIColor,
          detailTextColor: UIColor)
     {
+        self.backGroundColor = backGroundColor
         self.borderColor = borderColor
         self.cardColor = cardColor
         self.textColor = textColor
@@ -18,6 +21,10 @@ class BasicCellViewColorPalette: CellViewColorPalette {
     }
     
     //MARK:- CellViewColorPalette
+    func coloring(cell: UIView) {
+        cell.backgroundColor = self.backGroundColor
+    }
+    
     func coloring(textLabel: UILabel, with font: UIFont) {
         let attributes: [NSAttributedStringKey : Any] = [
             .foregroundColor : self.textColor,

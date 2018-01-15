@@ -1,6 +1,7 @@
 import Foundation
 
 public protocol CellViewColorPalette: class {
+    func coloring(cell: UIView)
     func coloring(textLabel: UILabel, with font: UIFont)
     func coloring(detailTextLabel: UILabel, with font: UIFont)
     func coloring(line layer: CALayer)

@@ -8,12 +8,17 @@ class InvertColor: HDRosaryTimelineViewStyle {
         self.original = original
     }
     
+    func colorting(section: UIView) {
+        self.original.colorting(section: section)
+    }
+
     func coloring(titleLabel: UILabel, with font: UIFont) {
         self.original.coloring(titleLabel: titleLabel, with: font)
     }
     
     func coloring(dot layer: CALayer) {
-        self.original.coloring(shadow: layer)
+        self.original.coloring(dot: layer)
+        layer.backgroundColor = layer.borderColor
     }
     
     func coloring(shadow layer: CALayer) {
@@ -44,6 +49,10 @@ class InvertColor: HDRosaryTimelineViewStyle {
         }
     }
     
+    func coloring(cell: UIView) {
+        self.original.coloring(cell: cell)
+    }
+
     func coloring(textLabel: UILabel, with font: UIFont) {
         self.original.coloring(textLabel: textLabel, with: font)
         textLabel.textColor = textLabel.textColor.invert()
@@ -59,7 +68,7 @@ class InvertColor: HDRosaryTimelineViewStyle {
     }
     
     func coloring(card layer: CALayer) {
-        self.original.coloring(line: layer)
+        self.original.coloring(card: layer)
         layer.backgroundColor = layer.borderColor
     }
     
